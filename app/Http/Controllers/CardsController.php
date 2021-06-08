@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CardsController extends Controller
 {
@@ -23,7 +24,7 @@ class CardsController extends Controller
      */
     public function create()
     {
-        return "cards create method";
+        return view('create_card');
     }
 
     /**
@@ -32,9 +33,9 @@ class CardsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $deck_id)
     {
-        //
+        return $deck_id;
     }
 
     /**
