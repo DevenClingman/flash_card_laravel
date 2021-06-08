@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DecksController;
+use App\Http\Controllers\CardsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@ use App\Http\Controllers\DecksController;
 // });
 
 Route::resource('decks', DecksController::class);
+
+Route::resource('cards', CardsController::class);
 
