@@ -56,7 +56,7 @@ class DecksController extends Controller
      */
     public function show(Deck $deck)
     {
-        //
+        return view('cards', compact('deck'));
     }
 
     /**

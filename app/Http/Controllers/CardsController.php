@@ -23,7 +23,7 @@ class CardsController extends Controller
      */
     public function create()
     {
-        //
+        return "cards create method";
     }
 
     /**
