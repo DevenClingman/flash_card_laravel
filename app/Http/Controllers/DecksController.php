@@ -27,12 +27,7 @@ class DecksController extends Controller
      */
     public function create()
     {
-        $user = User::findOrFail(1);
-
-        $deck = new Deck;
-        $deck->name = "Science";
-        $deck->user_id = 1;
-        $user->deck()->save($deck);
+       
     }
 
     /**

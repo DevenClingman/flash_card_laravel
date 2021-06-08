@@ -15,9 +15,9 @@ use App\Http\Controllers\CardsController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::resource('decks', DecksController::class);
 
