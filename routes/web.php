@@ -21,11 +21,9 @@ Route::get('/', function () {
 
 Route::resource('decks', DecksController::class);
 
-Route::get('/cards/create/{deck_id}', 'App\Http\Controllers\CardsController@create')->name('cards.create');
+Route::resource('cards', CardsController::class);
 
-Route::resource('cards', CardsController::class)->except([
-    'create'
-]);
+
 
 
 

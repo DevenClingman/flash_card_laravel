@@ -24,7 +24,7 @@ class CardsController extends Controller
      */
     public function create()
     {
-        return view('create_card');
+        return "hello";
     }
 
     /**

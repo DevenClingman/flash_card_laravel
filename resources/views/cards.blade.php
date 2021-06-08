@@ -3,7 +3,7 @@
 @section('content')
 <h1> {{$deck->name}} Deck</h1>
 <br>
-<a href="{{ route('cards.create')}}">Add Card</a>
+<a href="{{ route('cards.create') }}">Add Card</a>
     @foreach($deck->cards() as $card)
         <ul>
             <li>
