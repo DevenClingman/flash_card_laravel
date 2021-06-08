@@ -40,7 +40,7 @@ class DecksController extends Controller
     {
         $user = User::find(1);
         $deck = new Deck();
-        $deck->name = request('name');
+        $deck->name = $request->name;
         $deck->user_id = $user->id;
         $user->decks()->save($deck);
         $decks = $user->decks;
