@@ -27,7 +27,7 @@ class DecksController extends Controller
      */
     public function create()
     {
-       
+       return view('create_deck');
     }
 
     /**
@@ -38,7 +38,14 @@ class DecksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::find(1);
+        $deck = new Deck();
+        $deck->name = request('name');
+        $deck->user_id = $user->id;
+        $user->decks()->save($deck);
+        $decks = $user->decks;
+        
+        return view('decks', compact('decks'));
     }
 
     /**
