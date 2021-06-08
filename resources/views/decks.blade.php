@@ -4,7 +4,9 @@
     <h3>All Decks</h3>
     <ul>
         @foreach($decks as $deck)
-            <li>{{$deck->name}}</li>
+            <li>
+                <a href="{{ route('decks.show' , ['deck' => $deck->id]) }}">{{$deck->name}}</a>
+            </li>
         @endforeach
     </ul>
 @endsection
