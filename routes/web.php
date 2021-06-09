@@ -25,7 +25,7 @@ Route::resource('cards', CardsController::class)->except([
     'create'
 ]);
 
-Route::get('/decks/{deck_id/cards}', [CardsController::class, 'create'])->name('cards.create');
+Route::get('/decks/{deck_id}/cards', [CardsController::class, 'create'])->name('cards.create');
 
 
 

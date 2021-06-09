@@ -12,7 +12,7 @@ class CardsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($deck_id)
     {
         //
     }
@@ -22,7 +22,7 @@ class CardsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($deck_id)
     {
         return "hello";
     }
@@ -33,9 +33,9 @@ class CardsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $deck_id)
+    public function store(Request $request)
     {
-        return $deck_id;
+        //
     }
 
     /**
