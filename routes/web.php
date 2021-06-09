@@ -21,9 +21,11 @@ Route::get('/', function () {
 
 Route::resource('decks', DecksController::class);
 
-Route::resource('cards', CardsController::class);
+Route::resource('cards', CardsController::class)->except([
+    'create'
+]);
 
-
+Route::get('/decks/{deck_id/cards}', [CardsController::class, 'create'])->name('cards.create');
 
 
 
