@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Deck;
+use App\Models\Card;
 
 class CardsController extends Controller
 {
@@ -33,9 +35,14 @@ class CardsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $deck_id)
     {
-        //
+        $deck = Deck::findOrFail($deck_id);
+        $card = new Card();
+        $card->question = $request->question;
+        $card->answer = $request->answer;
+        $deck->cards()->save($card);
+        return view('cards', compact('deck'));
     }
 
     /**

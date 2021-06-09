@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Create Card</h1>
-   <form method="post" action="{{ route('cards.store') }}">
+   <form method="post" action="{{ route('cards.store', ['deck_id'=> $deck_id]) }}">
         @csrf
         <input name="question" type="text" placeholder="Enter Question"></input>
         <br><br>
