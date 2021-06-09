@@ -22,10 +22,12 @@ Route::get('/', function () {
 Route::resource('decks', DecksController::class);
 
 Route::resource('cards', CardsController::class)->except([
-    'create'
+    'create',
+    'store'
 ]);
 
 Route::get('/decks/{deck_id}/cards', [CardsController::class, 'create'])->name('cards.create');
+Route::post('/decks/{deck_id}/cards', [CardsController::class, 'store'])->name('cards.store');
 
 
 
