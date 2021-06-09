@@ -24,7 +24,7 @@ class CardsController extends Controller
      */
     public function create($deck_id)
     {
-        return "hello";
+        return view('create_card');
     }
 
     /**
