@@ -94,6 +94,9 @@ class DecksController extends Controller
      */
     public function destroy(Deck $deck)
     {
-        //
+        $deck->cards()->delete();
+        $deck->delete();
+        $decks = User::find(1)->decks;
+        return view('decks', compact('decks'));
     }
 }
