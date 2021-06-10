@@ -67,7 +67,7 @@ class DecksController extends Controller
      */
     public function edit(Deck $deck)
     {
-        //
+        return view('edit_deck', compact('deck'));
     }
 
     /**
@@ -79,7 +79,11 @@ class DecksController extends Controller
      */
     public function update(Request $request, Deck $deck)
     {
-        //
+        $deck->name = $request->name;
+        $deck->save();
+        $decks = User::find(1)->decks;
+        
+        return view('decks', compact('decks'));
     }
 
     /**

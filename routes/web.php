@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('decks', DecksController::class);
+Route::resource('decks', DecksController::class)->except([
+    'update'
+]);
 
 Route::resource('cards', CardsController::class)->except([
     'create',
@@ -28,6 +30,7 @@ Route::resource('cards', CardsController::class)->except([
 
 Route::get('/decks/{deck_id}/cards', [CardsController::class, 'create'])->name('cards.create');
 Route::post('/decks/{deck_id}/cards', [CardsController::class, 'store'])->name('cards.store');
+Route::post('/decks/{deck}', [DecksController::class, 'update'])->name('decks.update');
 
 
 
