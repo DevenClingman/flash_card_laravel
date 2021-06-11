@@ -1,12 +1,15 @@
-@extends('layouts.app')
+@include('layouts.styles')
 
-@section('content')
-    <div class="container">
+<video autoplay muted loop id="backgroundVideo">
+  <Source src="{{asset('assets/videos/WomanOnLaptop.mp4')}}">
+</video>
+
+<div class="content">
+    <div style="text-align:center">
         <h1>Welcome to the Flash Card App!</h1>
 
-        <a href="{{ route('decks.create') }}">Add Deck</a>
+        <a class="btn btn-outline-primary btn-lg " href="{{ route('decks.create') }}">Lets Get Started</a>
         <br><br>
-        <a href="{{ route('decks.index') }}">View Decks</a>
+        <a class="btn btn-outline-primary btn-lg" href="{{ route('decks.index') }}">Let Me See My Decks</a>
     </div>
-
-@endsection
+</div>
