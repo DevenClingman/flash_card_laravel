@@ -76,9 +76,14 @@ class CardsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $card_id)
     {
-        return "edit button clicked";
+        $card = Card::find($card_id);
+        $card->question = $request->question;
+        $card->answer = $request->answer;
+        $card->save();
+        $deck = $card->deck;
+        return view('cards', compact('deck'));
     }
 
     /**
