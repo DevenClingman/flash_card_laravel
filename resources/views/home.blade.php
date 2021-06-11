@@ -8,8 +8,11 @@
     <div style="text-align:center">
         <h1>Welcome to the Flash Card App!</h1>
 
-        <a class="btn btn-outline-primary btn-lg " href="{{ route('decks.create') }}">Lets Get Started</a>
+        <a class="btn btn-outline-dark btn-lg" style="color:white" href="{{ route('decks.create') }}">Lets Get Started</a>
         <br><br>
-        <a class="btn btn-outline-primary btn-lg" href="{{ route('decks.index') }}">Let Me See My Decks</a>
+        <a class="btn btn-outline-dark btn-lg" 
+           style="color:white"
+           style="background:rgba(0, 0, 0, 1)" 
+           href="{{ route('decks.index') }}">Let Me See My Decks</a>
     </div>
 </div>
