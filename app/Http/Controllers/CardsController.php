@@ -62,9 +62,11 @@ class CardsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($card_id)
     {
-        return view('edit_card');
+        $card = Card::find($card_id);
+
+        return view('edit_card', compact('card_id', 'card'));
     }
 
     /**
