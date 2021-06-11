@@ -92,8 +92,11 @@ class CardsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($card)
     {
-        //
+        $selectedCard = Card::find($card);
+        $deck = $selectedCard->deck;
+        $selectedCard->delete();
+        return view('cards', compact('deck'));
     }
 }
