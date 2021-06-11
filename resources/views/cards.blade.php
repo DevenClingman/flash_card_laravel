@@ -8,6 +8,8 @@
         <ul>
             <li>
                 <a href="{{ route('cards.show', ['card' => $card->id]) }}">{{$card->question}}</a>
+                <a href="{{ route('cards.edit', ['card' => $card->id]) }}">Edit / </a>
+                <a href="{{ route('cards.destroy', ['card' => $card->id]) }}">Delete</a>
             </li>
         </ul>
     @endforeach

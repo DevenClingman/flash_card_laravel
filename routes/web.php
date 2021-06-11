@@ -26,13 +26,22 @@ Route::resource('decks', DecksController::class)->except([
 
 Route::resource('cards', CardsController::class)->except([
     'create',
-    'store'
+    'store',
+    'update',
+    'destroy'
 ]);
+
+//decks
 
 Route::get('/decks/{deck_id}/cards', [CardsController::class, 'create'])->name('cards.create');
 Route::post('/decks/{deck_id}/cards', [CardsController::class, 'store'])->name('cards.store');
 Route::post('/decks/{deck}', [DecksController::class, 'update'])->name('decks.update');
 Route::get('/decks/delete/{deck}', [DecksController::class, 'destroy'])->name('decks.destroy');
+
+//cards
+
+Route::post('/cards/{card}', [CardsController::class, 'update'])->name('cards.update');
+Route::get('/cards/delete/{card}', [CardsController::class, 'destroy'])->name('cards.destroy');
 
 
 

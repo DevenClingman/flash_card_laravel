@@ -64,7 +64,7 @@ class CardsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('edit_card');
     }
 
     /**
@@ -76,7 +76,7 @@ class CardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "edit button clicked";
     }
 
     /**
