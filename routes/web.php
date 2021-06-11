@@ -45,3 +45,7 @@ Route::get('/cards/delete/{card}', [CardsController::class, 'destroy'])->name('c
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
