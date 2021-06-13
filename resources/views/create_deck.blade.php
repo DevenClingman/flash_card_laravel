@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-   <h1>Create Deck</h1>
-   <form method="post" action="{{ route('decks.store') }}">
-        @csrf
-        <input name="name" type="text" placeholder="Deck Name"></input>
-        <br><br>
-        <button type="submit">Submit</button>
-   </form>
+   <div class="container" >
+      <h1 style="text-align:center; padding:5%;">Create Deck</h1>
+      <form method="post" action="{{ route('decks.store') }}">
+         <div class="form-group">
+            @csrf
+            <input class="form-control" name="name" type="text" placeholder="Deck Name"></input>
+            <br><br>
+            <button class="btn btn-outline-dark btn-lg" type="submit">Submit</button>
+         </div>
+      </form>
+   </div>
 @endsection
