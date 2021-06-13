@@ -8,7 +8,7 @@
             @csrf
             <input class="form-control" name="name" type="text" placeholder="Deck Name"></input>
             <br><br>
-            <button class="btn btn-outline-dark btn-lg" type="submit">Submit</button>
+            <button class="btn btn-outline-dark btn-block" type="submit">Submit</button>
          </div>
       </form>
    </div>
