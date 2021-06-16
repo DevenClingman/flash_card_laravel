@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Deck;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DecksController extends Controller
 {
@@ -41,6 +42,7 @@ class DecksController extends Controller
         $user = User::find(1);
         $deck = new Deck();
         $deck->name = $request->name;
+        $deck->slug = Str::slug($deck->name);
         $deck->user_id = $user->id;
         $user->decks()->save($deck);
         $decks = $user->decks;
