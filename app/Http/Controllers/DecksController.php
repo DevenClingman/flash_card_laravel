@@ -26,8 +26,8 @@ class DecksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-       return view('create_deck');
+    {    
+	    return view('create_deck');
     }
 
     /**

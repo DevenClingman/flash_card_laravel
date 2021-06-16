@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Card;
+use App\Models\Deck;
 
 class CardObserver
 {
