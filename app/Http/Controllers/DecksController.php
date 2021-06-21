@@ -58,6 +58,8 @@ class DecksController extends Controller
      */
     public function show(Deck $deck)
     {
+        //return $deck->cards->count();
+        
         return view('cards', compact('deck'));
     }
 
