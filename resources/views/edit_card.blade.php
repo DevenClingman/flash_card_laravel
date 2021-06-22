@@ -5,9 +5,9 @@
 
     <form method="post" action="{{ route('cards.update', ['card'=> $card_id]) }}">
         @csrf
-        <input name="question" type="text" value="{{ $card->question }}"></input>
+        <textarea name="question" type="text">{{ $card->question }}</textarea>
         <br><br>
-        <input name="answer" type="text" value="{{ $card->answer }}"></input>
+        <textarea name="answer" type="text">{{ $card->answer }}</textarea>
         <br><br>
         <button type="submit">Submit</button>
    </form>

@@ -4,9 +4,9 @@
 <h1>Create Card</h1>
    <form method="post" action="{{ route('cards.store', ['deck_id'=> $deck_id]) }}">
         @csrf
-        <input name="question" type="text" placeholder="Enter Question"></input>
+        <textarea name="question" type="text" placeholder="Enter Question"></textarea>
         <br><br>
-        <input name="answer" type="text" placeholder="Enter Answer"></input>
+        <textarea name="answer" type="text" placeholder="Enter Answer"></textarea>
         <br><br>
         <button type="submit">Submit</button>
    </form>
