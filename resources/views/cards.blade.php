@@ -1,11 +1,5 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <h1> {{$deck->name}} Deck</h1>
-    <a href="{{ route('cards.create', ['deck_id' => $deck->id]) }}">Add Card</a>
-</div>
-
 <style>
 .center {
   margin: 0;
@@ -17,13 +11,19 @@
 }
 </style>
 
+@section('content')
+<div class="container" style="text-align:center;">
+    <h1 style="color:black;"> {{$deck->name}} Deck</h1>
+    <a href="{{ route('cards.create', ['deck_id' => $deck->id]) }}" class="btn btn-dark">Add Card</a>
+</div>
+
+
+
 <br>
     
     @if($deck->cards->count() > 0)
-        @foreach($deck->cards as $card)
-        
+        @foreach($deck->cards as $card)  
             <div class="container" style="text-align:center">
-            <h3>{{$loop->index}}</h3>
                     <ul>
                         <li>
                             <div id="card" class="card" style="width: 25rem; margin:auto; height:10rem" onclick="switchCard({{$loop->index}},
@@ -38,7 +38,6 @@
                         </li>
                     </ul>
             </div>
-
         @endforeach
         <script>
             function switchCard(index, question, answer){
@@ -47,8 +46,7 @@
                     document.getElementById("card-text" + index).innerHTML = answer;
                 }else{
                     document.getElementById("card-text" + index).innerHTML = question;
-                }
-                 
+                }  
             }
         </script>
     @endif
