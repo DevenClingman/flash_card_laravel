@@ -4,7 +4,7 @@
 
    <div class="container" style="padding: 5%;">
       <form method="post" action="{{ route('cards.store', ['deck_id'=> $deck_id]) }}">
-         <div style="background-color:gray; padding:5%; poacity:0.7;" class="form-group">
+         <div style="background-color:gray; padding:5%; opacity:0.7;" class="form-group">
             @csrf
             <textarea class="form-control" name="question" type="text" placeholder="Card Question"></textarea>
             <br><br>
