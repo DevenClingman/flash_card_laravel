@@ -5,7 +5,7 @@
       <form method="post" action="{{ route('decks.store') }}">
          <div style="background-color:gray; opacity:0.7; padding:5%;" class="form-group">
             @csrf
-            <input class="form-control" name="name" type="text" placeholder="Deck Name"></input>
+            <input class="form-control" name="name" type="text" placeholder="Deck Name">
             <br><br>
             <button class="btn btn-dark btn-block" type="submit">Submit</button>
          </div>
