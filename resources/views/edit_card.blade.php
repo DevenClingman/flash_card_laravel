@@ -6,6 +6,9 @@
             <div class="form-group" style="background-color:gray; padding:5%; opacity:0.7;">
                 @csrf
                 <textarea class="form-control" name="question" type="text">{{ $card->question }}</textarea>
+                @error('question')
+                    <span class="text-info">{{$message}}</span>
+                @enderror
                 <br><br>
                 <textarea class="form-control" name="answer" type="text">{{ $card->answer }}</textarea>
                 <br><br>
@@ -13,6 +16,4 @@
             </div>
        </form>
     </div>
-    
-
 @endsection

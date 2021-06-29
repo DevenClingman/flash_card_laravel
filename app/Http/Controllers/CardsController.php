@@ -37,6 +37,11 @@ class CardsController extends Controller
      */
     public function store(Request $request, $deck_id)
     {
+        $validated = $request->validate([
+            'question' => 'required | max:250',
+            'answer' => 'required | max:250'
+        ]);
+
         $deck = Deck::findOrFail($deck_id);
         $card = new Card();
         $card->question = $request->question;
