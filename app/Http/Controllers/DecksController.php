@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Deck;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class DecksController extends Controller
 {
@@ -39,6 +41,10 @@ class DecksController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required | unique:decks'
+        ]);
+
         $user = User::find(1);
         $deck = new Deck();
         $deck->name = $request->name;
@@ -46,7 +52,6 @@ class DecksController extends Controller
         $deck->user_id = $user->id;
         $user->decks()->save($deck);
         $decks = $user->decks;
-        
         return view('decks', compact('decks'));
     }
 
@@ -83,6 +88,10 @@ class DecksController extends Controller
      */
     public function update(Request $request, Deck $deck)
     {
+        $validated = $request->validate([
+            'name' => ['required', Rule::unique('decks', 'name')->ignore($deck->id)]
+        ]);
+
         $deck->name = $request->name;
         $deck->save();
         $decks = User::find(1)->decks;
