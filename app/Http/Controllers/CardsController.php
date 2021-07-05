@@ -83,6 +83,12 @@ class CardsController extends Controller
      */
     public function update(Request $request, $card_id)
     {
+        $validated = $request->validate([
+            'question' => 'required | max:250',
+            'answer' => 'required | max:250'
+        ]);
+
+
         $card = Card::find($card_id);
         $card->question = $request->question;
         $card->answer = $request->answer;
